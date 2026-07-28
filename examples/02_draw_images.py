@@ -20,7 +20,7 @@ from reader import Reader
 
 parser = argparse.ArgumentParser()
 parser.add_argument("recording_path")
-parser.add_argument("--normals_enabled", type=bool, default=False)
+parser.add_argument("--normals_enabled", action="store_true")
 args = parser.parse_args()
 
 reader = Reader(recording_path=args.recording_path)
