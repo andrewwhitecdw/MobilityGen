@@ -120,6 +120,8 @@ class GridPoseSampler(PoseSampler):
         # TODO: check no unoccupied
 
         coords = np.argwhere(net_mask)
+        if len(coords) == 0:
+            raise ValueError("Selected grid block contains no freespace pixels")
         random_index = np.random.randint(0, len(coords))
         pixel = coords[random_index]
         pixel = Point2d(x=pixel[1], y=pixel[0])
