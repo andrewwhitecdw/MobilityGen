@@ -103,7 +103,7 @@ install_python()
 			tar -xf "/tmp/python@$PYTHON_PACKAGE.tar.gz" -C "$PYTHON_INSTALL_FOLDER"
 		else
 			echo "Failed downloading the Python interpreter"
-			exit $?
+			exit 1
 		fi
 	fi
 }
