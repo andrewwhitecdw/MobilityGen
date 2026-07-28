@@ -84,8 +84,8 @@ def update_recording(name: str):
     global context
     context = Context(name)
     main = context.update(index=0)
-    slider = gr.Slider(value=0, minimum=0, maximum=len(context.reader) - 1, step=1)
-    return main + [slider]
+    slider_update = gr.update(value=0, minimum=0, maximum=len(context.reader) - 1, step=1)
+    return main + [slider_update]
 
 
 def update_step(index: int):
