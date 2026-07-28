@@ -116,6 +116,9 @@ def main():
             shading = shading.reshape(height, width, 1)
             colored_frame = (colored_frame * shading).astype(np.uint8)
 
+        # OpenCV video writer expects BGR format
+        colored_frame = cv2.cvtColor(colored_frame, cv2.COLOR_RGB2BGR)
+
         # Write frame to video
         out.write(colored_frame)
 
