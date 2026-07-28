@@ -35,9 +35,9 @@ def nearest_point_on_segment(a: np.ndarray, b: np.ndarray, c: np.ndarray):
     a2b_norm = a2b / (a2b_mag + 1e-6)
     dist = np.dot(a2c, a2b_norm)
     if dist < 0:
-        return a, dist
+        return a, 0.0
     elif dist > a2b_mag:
-        return b, dist
+        return b, a2b_mag
     else:
         return a + a2b_norm * dist, dist
     
