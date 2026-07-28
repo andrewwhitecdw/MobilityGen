@@ -554,7 +554,7 @@ class SpotRobot(IsaacLabRobot):
     path_following_target_point_offset_meters: float = 1.0
 
     usd_url = "http://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/4.2/Isaac/Robots/BostonDynamics/spot/spot.usd"
-    articulation_path = "/"
+    articulation_path = ""
     controller_z_offset: float = 0.7
 
     @classmethod
