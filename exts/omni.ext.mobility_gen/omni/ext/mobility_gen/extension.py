@@ -140,7 +140,11 @@ class MobilityGenExtension(omni.ext.IExt):
         self.keyboard.disconnect()
         self.gamepad.disconnect()
         world = get_world()
-        world.remove_physics_callback("scenario_physics", self.on_physics)
+        if world is not None:
+            try:
+                world.remove_physics_callback("scenario_physics")
+            except Exception:
+                pass
 
     def start_new_recording(self):
         recording_name = datetime.datetime.now().isoformat()
