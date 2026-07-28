@@ -353,7 +353,7 @@ free_thresh: {free_thresh}
         buffer_distance_pixels = int(buffer_distance_pixels)
         
         radius = buffer_distance_pixels
-        diameter = radius * 2
+        diameter = radius * 2 + 1
         kernel = np.zeros((diameter, diameter), np.uint8)
         cv2.circle(kernel, (radius, radius), radius, 255, -1)
         occupied = self.occupied_mask().astype(np.uint8) * 255
