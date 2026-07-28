@@ -27,14 +27,14 @@ def prim_add_collision(prim: Usd.Prim):
 
 
 def prim_compute_bbox(prim: Usd.Prim, nested: bool = False) -> \
-        tp.Tuple[tp.Tuple[float, float, float], tp.Tuple[float, float, float]]:
+        tp.Tuple[tp.Tuple[float, float, float], tp.Tuple[float, float, float], tp.Tuple[float, float, float]]:
     """Computes the axis-aligned bounding box for a USD prim.
     
     Args:
         prim (Usd.Prim):  The USD prim to compute the bounding box of.
 
     Returns:
-        Tuple[Tuple[float, float, float], Tuple[float, float, float]] The ((min_x, min_y, min_z), (max_x, max_y, max_z)) values of the bounding box.
+        Tuple[Tuple[float, float, float], Tuple[float, float, float], Tuple[float, float, float]] The ((min_x, min_y, min_z), (max_x, max_y, max_z), (mid_x, mid_y, mid_z)) values of the bounding box.
     """
     
     bbox_cache: UsdGeom.BBoxCache = UsdGeom.BBoxCache(
