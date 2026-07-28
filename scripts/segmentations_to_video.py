@@ -53,7 +53,9 @@ def main():
 
     # Read first image to get dimensions
     first_img = cv2.imread(str(png_files[0]), cv2.IMREAD_UNCHANGED)
-    height, width = first_img.shape
+    if first_img is None:
+        raise ValueError(f"Could not read image: {png_files[0]}")
+    height, width = first_img.shape[:2]
 
     # Create fixed colormap
     colormap = create_fixed_colormap()
