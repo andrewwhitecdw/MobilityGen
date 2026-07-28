@@ -52,10 +52,10 @@ plt.imshow(images['robot.front_camera.right.instance_id_segmentation_image'])
 
 if args.normals_enabled:
     plt.subplot(nrows, 2, 7)
-    plt.title('left instance id')
+    plt.title('left normals')
     plt.imshow(images['robot.front_camera.left.normals_image'])
     plt.subplot(nrows, 2, 8)
-    plt.title('right instance id')
+    plt.title('right normals')
     plt.imshow(images['robot.front_camera.right.normals_image'])
 plt.show()
     
