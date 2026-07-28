@@ -162,6 +162,12 @@ class MobilityGenExtension(omni.ext.IExt):
         self.recording_step_label.text = "Current recording duration: "
 
     def clear_scenario(self):
+        world = get_world()
+        if world is not None:
+            try:
+                world.remove_physics_callback("scenario_physics")
+            except Exception:
+                pass
         self.scenario = None
         self.cached_stage_path = None
 
