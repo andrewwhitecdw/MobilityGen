@@ -164,7 +164,7 @@ class Robot(Module):
         camera_path = os.path.join(self.prim_path, self.chase_camera_base_path, "chase_camera")
         stage_add_camera(stage, 
             camera_path, 
-            focal_length=10, horizontal_aperature=30, vertical_aperature=30
+            focal_length=10, horizontal_aperture=30, vertical_aperture=30
         )
         camera_prim = stage_get_prim(stage, camera_path)
         prim_rotate_x(camera_prim, self.chase_camera_tilt_angle)
