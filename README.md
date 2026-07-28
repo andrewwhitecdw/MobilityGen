@@ -474,7 +474,7 @@ In case you're interested, each recording is represented as a directory with the
             robot.front_camera.right.segmentation_image/
                 ...
         normals/
-            robot.front_camera.left.normals_image\
+            robot.front_camera.left.normals_image/
                 00000000.npy
                 00000001.npy
                 ...
