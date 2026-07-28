@@ -176,6 +176,8 @@ class MobilityGenExtension(omni.ext.IExt):
         self.clear_recording()
 
     def reset(self):
+        if self.scenario is None:
+            return
         self.writer = None
         self.scenario.reset()
         if self.recording_enabled:
