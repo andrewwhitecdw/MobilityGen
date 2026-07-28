@@ -83,6 +83,14 @@ class Camera(Sensor):
             self._segmentation_annotator.detach()
             self._segmentation_annotator = None
 
+        if self._instance_id_segmentation_annotator is not None:
+            self._instance_id_segmentation_annotator.detach()
+            self._instance_id_segmentation_annotator = None
+
+        if self._normals_annotator is not None:
+            self._normals_annotator.detach()
+            self._normals_annotator = None
+
         if self._depth_annotator is not None:
             self._depth_annotator.detach()
             self._depth_annotator = None
