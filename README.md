@@ -293,7 +293,7 @@ If you find MobilityGen helpful for your use case, run in to issues, or have any
 
 <a id="contributing"></a>
 
-<a id="usage"></a>
+<a id="guides"></a>
 ## 💡 How To Guides
 
 <a id="how-to-procedural-data"></a>
