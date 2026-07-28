@@ -66,7 +66,7 @@ class OccupancyMap:
 """
 image: {image_filename}
 resolution: {resolution}
-origin: {origin}
+origin: [{origin[0]}, {origin[1]}, {origin[2]}]
 negate: {negate}
 occupied_thresh: {occupied_thresh}
 free_thresh: {free_thresh}
