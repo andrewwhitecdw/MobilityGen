@@ -93,6 +93,7 @@ class RandomCubeSceneSmall(RandomCubeScene):
 
 
 @SCENE_BUILDERS.register()
+@SCENE_BUILDERS.register()
 class RandomCubeSceneLarge(RandomCubeScene):
     num_cubes: int = 20
     x_boundary: Tuple[float, float] = (-10., 10.)
