@@ -210,7 +210,7 @@ class GamepadDriver(object):
         return np.array([axis.value for axis in self.axes])
     
     def get_button_values(self) -> np.ndarray:
-        return np.ndarray([])
+        return np.array([])
     
     
 #=========================================================
