@@ -450,8 +450,8 @@ free_thresh: {free_thresh}
         """
 
         pixel = self.world_to_pixel_numpy(np.array([[point.x, point.y]]))
-        x_px = int(pixel[0, 0])
-        y_px = int(pixel[0, 1])
+        x_px = int(np.floor(pixel[0, 0]))
+        y_px = int(np.floor(pixel[0, 1]))
         
         if x_px < 0:
             return False
