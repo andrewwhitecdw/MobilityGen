@@ -77,6 +77,7 @@ if __name__ == "__main__":
 
     if not os.path.exists(path):
         print(f"Provided path doesn't exist: {path}")
+        sys.exit(1)
     else:
         SCRIPT_ROOT = os.path.dirname(os.path.realpath(__file__))
         create_link(f"{SCRIPT_ROOT}/../../app", path)
