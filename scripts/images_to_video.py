@@ -39,16 +39,22 @@ def main():
 
     # Read first image to get dimensions
     first_img = cv2.imread(str(image_files[0]))
+    if first_img is None:
+        raise ValueError(f"Could not read image: {image_files[0]}")
     height, width = first_img.shape[:2]
 
     # Initialize video writer
     fourcc = cv2.VideoWriter_fourcc(*'mp4v')
     out = cv2.VideoWriter(args.output_path, fourcc, args.fps, (width, height))
+    if not out.isOpened():
+        raise RuntimeError(f"Could not open video writer: {args.output_path}")
 
     # Process each frame
     for image_file in image_files:
         # Read image
         frame = cv2.imread(str(image_file))
+        if frame is None:
+            raise ValueError(f"Could not read image: {image_file}")
         
         # Write frame to video
         out.write(frame)
