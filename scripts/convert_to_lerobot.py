@@ -93,6 +93,7 @@ def remap_segmentation_image(
     old_id_to_label: dict
 ) -> np.ndarray:
     max_id = 0
+    old_id_of_unlabeled = 0
     for old_id, label in old_id_to_label.items():
         assert int(old_id) >= 0
         max_id = max(max_id, int(old_id))
