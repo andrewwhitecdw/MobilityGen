@@ -29,9 +29,29 @@ MAX_DEPTH_VALUE = 100_000
 def get_subdirectories(path: Path) -> list[Path]:
     return sorted([p for p in path.iterdir() if p.is_dir()])
 
+
 # Get the paths of files within a directory.
+def _natural_sort_key(path: Path):
+    name = path.name
+    key = []
+    i = 0
+    while i < len(name):
+        if name[i].isdigit():
+            j = i
+            while j < len(name) and name[j].isdigit():
+                j += 1
+            key.append((0, int(name[i:j])))
+            i = j
+        else:
+            j = i
+            while j < len(name) and not name[j].isdigit():
+                j += 1
+            key.append((1, name[i:j].lower()))
+            i = j
+    return key
+
 def get_files_in_dir(path: Path) -> list[Path]:
-    return sorted([p for p in path.iterdir() if p.is_file()])
+    return sorted([p for p in path.iterdir() if p.is_file()], key=_natural_sort_key)
 
 # Read an image file into a numpy array.
 def load_image(file_path: Path) -> np.ndarray:
