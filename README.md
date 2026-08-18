@@ -357,9 +357,9 @@ The general workflow is as follows:
 
 1. Subclass the [Robot](exts/omni.ext.mobility_gen/omni/ext/mobility_gen/robots.py) class.
 2. Implement the ``build()`` method.  This method is responsible for adding the robot to the USD stage.
-2. Implement the ``write_action()`` method.  This method performs the logic of applying the linear, angular velocity command.
-3. Overwrite the common class parameters (like ``physics_dt``, ``occupancy_map_z_min``, etc.)
-4. Register the robot class by using the ``ROBOT.register()`` decorator.  This makes the custom robot discoverable.
+3. Implement the ``write_action()`` method.  This method performs the logic of applying the linear, angular velocity command.
+4. Overwrite the common class parameters (like ``physics_dt``, ``occupancy_map_z_min``, etc.)
+5. Register the robot class by using the ``ROBOT.register()`` decorator.  This makes the custom robot discoverable.
 
 We recommend referencing the example robots in [robots.py](exts/omni.ext.mobility_gen/omni/ext/mobility_gen/robots.py) for more details.
 
